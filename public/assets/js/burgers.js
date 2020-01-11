@@ -1,11 +1,15 @@
-$("#input").on("submit", function(){
+
+
+$(".create-form").on("submit", function(){
     event.preventDefault();
+    console.log($("#eat").val());
 
 
     const newBurger = {
-        name: $("entry")
+        burger_name: $("#eat").val(),
+        devoured: 0
     }
-    console.log(newBurger.name);
+    console.log(newBurger.burger_name);
 
     $.ajax("/api/burgers", {
         type: "POST",
@@ -21,3 +25,4 @@ $("#input").on("submit", function(){
 
 
 });
+

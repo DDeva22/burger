@@ -22,12 +22,12 @@ const orm = {
         const queryString = `INSERT INTO ${table}`;
 
 
-        queryString += ` (`;
+        queryString += " (";
         queryString += column.toString();
-        queryString += `) `;
-        queryString += `VALUES (`;
+        queryString += ") ";
+        queryString += "VALUES (";
         queryString += printQuestionMarks(val.length);
-        queryString += `) `;
+        queryString += ") ";
 
 
         console.log(chalk.cyan(queryString));
@@ -46,9 +46,9 @@ const orm = {
     update: function(table, objcolVal, condition, callB){
         const queryString = `UPDATE ${table}`;
 
-        queryString += ` SET `;
+        queryString += " SET ";
         queryString += objToSql(objcolVal);
-        queryString += ` WHERE `;
+        queryString += " WHERE ";
         queryString += condition;
 
         console.log(chalk.cyan(queryString));
