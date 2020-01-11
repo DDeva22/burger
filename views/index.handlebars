@@ -1,8 +1,10 @@
+<div class = "container">
+
 <h1> LET'S EAT! </h1>
 
 <form class = "create-form">
 
-    <div class = "form-group">
+    <div class = "form-group" id = "input">
         <label for = "entry"> What Burger Will You Have?</label><br>
         <input type = "text" id = "entry">
     </div>
@@ -16,7 +18,7 @@
 <ul>
     {{#each burgers}}
         {{#unless devoured}}
-            {{> burgers devoured}}
+            {{> bblock devoured}}
         {{/unless}}
     {{/each}}
 </ul>
@@ -31,4 +33,4 @@
 </ul>
 
 
-
+</div>

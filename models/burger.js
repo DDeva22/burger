@@ -2,8 +2,8 @@ const orm = require("../config/orm.js");
 
 
 const burgerFunction = {
-    allSelect: function(callB){
-        orm.selectAll("burgers", function(response){
+    all: function(callB){
+        orm.select("burgers", function(response){
             callB(response);
         });
     },

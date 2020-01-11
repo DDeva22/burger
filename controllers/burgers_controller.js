@@ -7,12 +7,12 @@ const burger = require("../models/burger.js");
 
 
 router.get("/", function(req, res){
-    burger.allSelect(function(data){
-        const resObject = {
+    burger.all(function(data){
+        const hbsObject = {
             burgers: data
         };
-        console.log(resObject);
-        res.render("index", resObject);
+        console.log(hbsObject);
+        res.render("index", hbsObject);
     });
 });
 

@@ -2,7 +2,7 @@ const connection = require("./connection.js");
 
 
 const orm = {
-    selectAll: function(table, callB){
+    select: function(table, callB){
         const queryString = `SELECT * FROM ${table};`;
         connection.query(queryString, function(error, result){
             if(error){
@@ -17,7 +17,7 @@ const orm = {
 
 
     },
-    insertOne: function(table, column, val, callB){
+    insert: function(table, column, val, callB){
         const queryString = `INSERT INTO ${table}`;
 
 
@@ -42,7 +42,7 @@ const orm = {
 
 
     },
-    updateOne: function(table, objcolVal, condition, callB){
+    update: function(table, objcolVal, condition, callB){
         const queryString = `UPDATE ${table}`;
 
         queryString += ` SET `;
