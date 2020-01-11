@@ -1,5 +1,14 @@
 const express = require("express");
+const path = require("path")
+const exphbs = require("express-handlebars").create({
+    layoutsDir: path.join(__dirname, "./views/layouts"),
+    partialsDir: path.join(__dirname, "./views/partials"),
+    defaultLayout: "layout",
+    extname: "handlebars"
+});
+
 const routes = require("./controllers/burgers_controller.js");
+
 
 const app = express();
 
@@ -15,8 +24,8 @@ app.use(routes);
 
 
 
-const eHandlebar = require("express-handlebars");
-app.engine("handlebars", eHandlebar({ defaultLayout: "main"}));
+
+app.engine("handlebars", exphbs({ defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 

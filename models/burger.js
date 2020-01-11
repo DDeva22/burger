@@ -3,7 +3,7 @@ const orm = require("../config/orm.js");
 
 const burgerFunction = {
     allSelect: function(callB){
-        orm.all("burgers", function(response){
+        orm.selectAll("burgers", function(response){
             callB(response);
         });
     },
