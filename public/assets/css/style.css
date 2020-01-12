@@ -1,0 +1,21 @@
+.container{
+    
+    font-family: 'Black Ops One', cursive;
+}
+
+h1{
+    font-family: 'Bungee Shade', cursive;
+}
+h2{
+    font-family: 'Bungee Shade', cursive;
+}
+
+li{
+    background-color: rgba(0, 204, 255, 0.637);
+    box-shadow: 2px 2px 2px 2px #888888;
+    margin: 20px;
+}
+
+#eat{
+    background-color: rgb(255, 0, 0);
+}
