@@ -1,10 +1,18 @@
 const connection = require("./connection.js");
 const chalk = require("chalk");
-
+function printQuestionMarks(num) {
+    var arr = [];
+  
+    for (var i = 0; i < num; i++) {
+      arr.push("?");
+    }
+  
+    return arr.toString();
+  }
 
 const orm = {
     select: function(table, callB){
-        const queryString = `SELECT * FROM ${table};`;
+        let queryString = `SELECT * FROM ${table};`;
         connection.query(queryString, function(error, result){
             if(error){
 
@@ -19,7 +27,7 @@ const orm = {
 
     },
     insert: function(table, column, val, callB){
-        const queryString = `INSERT INTO ${table}`;
+        let queryString = `INSERT INTO ${table}`;
 
 
         queryString += " (";
@@ -44,7 +52,7 @@ const orm = {
 
     },
     update: function(table, objcolVal, condition, callB){
-        const queryString = `UPDATE ${table}`;
+        let queryString = `UPDATE ${table}`;
 
         queryString += " SET ";
         queryString += objToSql(objcolVal);

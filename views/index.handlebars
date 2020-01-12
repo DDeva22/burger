@@ -8,16 +8,16 @@
     <input type="input" class="form-control" id="eat" value = "" name = "name" placeholder="What Would You Like To Eat?">
 
   </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button id="thing" type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 
 
 
 <ul>
-    {{#each burgers}}
+    {{#each burgers as |burger|}}
         {{#unless devoured}}
-            {{> bblock devoured}}
+            {{> bblock burger}}
         {{/unless}}
     {{/each}}
 </ul>

@@ -1,7 +1,8 @@
 
 //Can't get this to work. Even tried rearranging to directly match the MvC example.
 //Without this I can't add anything. Console.logs do not work.
-$(".create-form").on("submit", function(){
+$(document).ready(function() {
+  $("#thing").click(function(event){
     event.preventDefault();
     console.log($("#eat").val());
 
@@ -25,6 +26,7 @@ $(".create-form").on("submit", function(){
 
 
 
+});
 });
 
 
