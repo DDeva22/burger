@@ -30,5 +30,41 @@ $(document).ready(function() {
 });
 
 
+$(document).ready(function(){
+  $(".butoneat").click(function(event){
+    console.log(`clicked!`);
+    event.preventDefault();
+    
+    const id = $(this).attr("id");
+    
+    const newDevour = $(this).data("newdevour");
+    console.log(`${id} ${newDevour}`);
+    const devourState = {
+      devoured: newDevour
+    };
+
+
+
+
+    $.ajax("/api/burgers" + id, {
+      type: "PUT",
+      data: devourState
+    }).then(
+      function() {
+        console.log("CHANGED DEVOUR TO", newDevour);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+    
+
+
+
+  });
+
+
+});
+
+
 
 

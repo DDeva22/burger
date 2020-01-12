@@ -12,6 +12,7 @@ router.get("/", function(req, res){
             burgers: data
         };
         console.log(hbsObject);
+        // console.log(hbsObject.burgers[0].devoured);
         res.render("index", hbsObject);
     });
 });
