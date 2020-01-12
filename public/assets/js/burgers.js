@@ -37,8 +37,9 @@ $(document).ready(function(){
     
     const id = $(this).attr("id");
     
-    const newDevour = $(this).data("newdevour");
-    if (newDevour === 0){
+    let newDevour = $(this).data("newdevour");
+    if (newDevour === false){
+      newDevour = true;
       
     }
 
