@@ -38,6 +38,11 @@ $(document).ready(function(){
     const id = $(this).attr("id");
     
     const newDevour = $(this).data("newdevour");
+    if (newDevour === 0){
+      
+    }
+
+
     console.log(`${id} ${newDevour}`);
     const devourState = {
       devoured: newDevour
@@ -46,7 +51,7 @@ $(document).ready(function(){
 
 
 
-    $.ajax("/api/burgers" + id, {
+    $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: devourState
     }).then(

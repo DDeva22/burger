@@ -17,16 +17,19 @@
 <ul>
     {{#each burgers as |burger|}}
         {{#unless devoured}}
-            {{> bblock burger}}
+            {{> bblock burger devoured=false}}
         {{/unless}}
     {{/each}}
 </ul>
 
-
+<hr>
+<hr>
+<hr>
+<h2>MMMM SO GOOD!</h2>
 <ul>
-    {{#each burgers}}
+    {{#each burgers as |burger|}}
         {{#if devoured}}
-
+            {{> bblock burger devoured=true}}
         {{/if}}
     {{/each}}
 </ul>
